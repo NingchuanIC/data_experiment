@@ -198,12 +198,12 @@ def main() -> None:
         if not dataset_path.exists():
             raise FileNotFoundError(f"Dataset not found: {dataset_path}")
 
-    for model in MODELS:
-        model_dir = result_dir / model
-        model_dir.mkdir(parents=True, exist_ok=True)
+    for dataset_name, dataset_path in DATASETS.items():
+        dataset_dir = result_dir / dataset_name
+        dataset_dir.mkdir(parents=True, exist_ok=True)
 
-        for dataset_name, dataset_path in DATASETS.items():
-            exp_dir = model_dir / dataset_name
+        for model in MODELS:
+            exp_dir = dataset_dir / model
             exp_dir.mkdir(parents=True, exist_ok=True)
 
             metric_bucket: Dict[str, list[float]] = {}
@@ -241,7 +241,7 @@ def main() -> None:
                 encoding="utf-8",
             )
             write_summary_text(exp_dir / "summary.txt", summary)
-            print(f"[DONE] model={model} dataset={dataset_name} -> {exp_dir}")
+            print(f"[DONE] dataset={dataset_name} model={model} -> {exp_dir}")
 
     print(f"All experiments finished. Results in: {result_dir}")
 
