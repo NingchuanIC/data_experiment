@@ -34,7 +34,7 @@ def parse_args() -> argparse.Namespace:
         default=Path("/home/azureuser/data_experiment/Result"),
         help="Output root for all logs and summaries",
     )
-    parser.add_argument("--runs", type=int, default=10, help="Number of runs per model per dataset")
+    parser.add_argument("--runs", type=int, default=5, help="Number of runs per model per dataset")
     parser.add_argument("--epochs", type=int, default=100, help="Training epochs passed to train_model.py")
     parser.add_argument("--device", type=str, default="cuda", choices=["cuda"], help="Training device")
     return parser.parse_args()
