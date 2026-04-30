@@ -13,8 +13,8 @@ from typing import Dict
 
 MODELS = ["graphsage", "gcn", "appnp", "residualgat"]
 DATASETS = {
-    "graph_dataset": Path(r"D:\imperial_homework\third_year\FYP\experiment\data\build_graph\graph_dataset"),
-    "build_graph_news_graph_6_feat": Path(r"D:\imperial_homework\third_year\FYP\experiment\data\build_graph_news_graph_6_feat"),
+    "graph_dataset": Path("/home/azureuser/data_experiment/data/build_graph/graph_dataset"),
+    "build_graph_news_graph_6_feat": Path("/home/azureuser/data_experiment/data/build_graph_news_graph_6_feat"),
 }
 
 
@@ -25,13 +25,13 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--project-root",
         type=Path,
-        default=Path(r"D:\imperial_homework\third_year\FYP\experiment"),
+        default=Path("/home/azureuser/data_experiment"),
         help="Project root that contains train_model.py",
     )
     parser.add_argument(
         "--result-dir",
         type=Path,
-        default=Path(r"D:\imperial_homework\third_year\FYP\experiment\Result"),
+        default=Path("/home/azureuser/data_experiment/Result"),
         help="Output root for all logs and summaries",
     )
     parser.add_argument("--runs", type=int, default=10, help="Number of runs per model per dataset")
