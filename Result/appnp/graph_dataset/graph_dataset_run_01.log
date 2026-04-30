@@ -1,0 +1,53 @@
+Model: appnp
+target: future_ret_5
+epochs: 100
+lr: 0.001
+weight_decay: 0.0001
+hidden_dim: 32
+loss_fn: mixed_ic_mse
+mse_weight: 0.2
+ic_weight: 0.8
+early_stopping_patience: 20
+topk_list: [10, 30, 50]
+features (15): ['ret_1', 'ret_5', 'ret_10', 'ret_20', 'hl_spread', 'co_ret', 'log_vol', 'turnover_rate', 'volume_ratio', 'pb', 'ma5_gap', 'ma10_gap', 'ma20_gap', 'volatility_5', 'volatility_20']
+best_epoch: 3
+best_val_ic: 0.04869857
+epoch=001 train_loss=-0.01187116 | val_ic=0.02378210 | best_val_ic=0.02378210 | best_epoch=001
+epoch=002 train_loss=-0.00327793 | val_ic=0.02818603 | best_val_ic=0.02818603 | best_epoch=002
+epoch=003 train_loss=-0.01136450 | val_ic=0.04869857 | best_val_ic=0.04869857 | best_epoch=003
+epoch=004 train_loss=-0.01924607 | val_ic=0.04522842 | best_val_ic=0.04869857 | best_epoch=003
+epoch=005 train_loss=-0.02239662 | val_ic=0.04217866 | best_val_ic=0.04869857 | best_epoch=003
+epoch=006 train_loss=-0.02447356 | val_ic=0.01483714 | best_val_ic=0.04869857 | best_epoch=003
+epoch=007 train_loss=-0.02577814 | val_ic=0.01485808 | best_val_ic=0.04869857 | best_epoch=003
+epoch=008 train_loss=-0.02552790 | val_ic=0.01703017 | best_val_ic=0.04869857 | best_epoch=003
+epoch=009 train_loss=-0.02544096 | val_ic=0.02377816 | best_val_ic=0.04869857 | best_epoch=003
+epoch=010 train_loss=-0.02471019 | val_ic=0.02512927 | best_val_ic=0.04869857 | best_epoch=003
+epoch=011 train_loss=-0.02592361 | val_ic=0.02043081 | best_val_ic=0.04869857 | best_epoch=003
+epoch=012 train_loss=-0.02633679 | val_ic=0.01950480 | best_val_ic=0.04869857 | best_epoch=003
+epoch=013 train_loss=-0.02506017 | val_ic=0.02522524 | best_val_ic=0.04869857 | best_epoch=003
+epoch=014 train_loss=-0.02570115 | val_ic=0.03103357 | best_val_ic=0.04869857 | best_epoch=003
+epoch=015 train_loss=-0.02424838 | val_ic=0.04406068 | best_val_ic=0.04869857 | best_epoch=003
+epoch=016 train_loss=-0.02680103 | val_ic=0.02289847 | best_val_ic=0.04869857 | best_epoch=003
+epoch=017 train_loss=-0.02642062 | val_ic=0.02169471 | best_val_ic=0.04869857 | best_epoch=003
+epoch=018 train_loss=-0.02569274 | val_ic=0.01683259 | best_val_ic=0.04869857 | best_epoch=003
+epoch=019 train_loss=-0.02822260 | val_ic=0.02433459 | best_val_ic=0.04869857 | best_epoch=003
+epoch=020 train_loss=-0.02825435 | val_ic=0.02300096 | best_val_ic=0.04869857 | best_epoch=003
+epoch=021 train_loss=-0.02801882 | val_ic=0.02186709 | best_val_ic=0.04869857 | best_epoch=003
+epoch=022 train_loss=-0.02842171 | val_ic=0.02003891 | best_val_ic=0.04869857 | best_epoch=003
+epoch=023 train_loss=-0.02912717 | val_ic=0.01823970 | best_val_ic=0.04869857 | best_epoch=003
+early_stopping_triggered_at_epoch=023
+[train] samples=567032
+[train] IC=0.04418140 | RankIC=0.05054010 | SignAcc=0.51268888 | Sharpe=0.70218697 | MSE=0.01472770
+[train] Top10 IRR=2.10124614 | Top10 Sharpe=1.86524883
+[train] Top30 IRR=1.42565143 | Top30 Sharpe=1.82043069
+[train] Top50 IRR=1.83611842 | Top50 Sharpe=2.19077310
+[validation] samples=120935
+[validation] IC=0.04869858 | RankIC=0.05058342 | SignAcc=0.49491049 | Sharpe=1.19928949 | MSE=0.00931299
+[validation] Top10 IRR=0.23882911 | Top10 Sharpe=0.73921924
+[validation] Top30 IRR=0.36094606 | Top30 Sharpe=0.76592304
+[validation] Top50 IRR=0.98702811 | Top50 Sharpe=1.13618463
+[test] samples=118840
+[test] IC=0.01823037 | RankIC=0.01971271 | SignAcc=0.50692528 | Sharpe=0.64065659 | MSE=0.00926201
+[test] Top10 IRR=10.31993526 | Top10 Sharpe=3.16410899
+[test] Top30 IRR=7.26048876 | Top30 Sharpe=3.42258651
+[test] Top50 IRR=5.47499286 | Top50 Sharpe=3.47740346
